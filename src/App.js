@@ -1,28 +1,44 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {connect} from 'react-redux'
+import LoadingBar from 'react-redux-loading-bar'
+
+import {handleInitialData} from './actions/people'
+import People from './components/People'
+import Person from './components/Person'
+import NotFound from './components/NotFound'
+
+import './App.css'
 
 class App extends Component {
+  componentDidMount = () => {
+    this.props.dispatch(handleInitialData())
+    // this.props.dispatch(getPeople())
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+      <Router>
+        <div className="App">
+          <LoadingBar />
+          {this.props.loading === true ? null : (
+            <Switch>
+              <Route path="/people/:id" component={Person} />
+              <Route path="/people" component={People} />
+              <Route exact path="/" component={People} />
+              <Route component={NotFound} />
+            </Switch>
+          )}
+        </div>
+      </Router>
+    )
   }
 }
 
-export default App;
+function mapStateToProps({loadingBar}) {
+  const {default: loading} = loadingBar
+  return {
+    loading: loading === 1,
+  }
+}
+export default connect(mapStateToProps)(App)
