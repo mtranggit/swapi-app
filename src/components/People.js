@@ -19,7 +19,7 @@ const PersonList = props => {
   )
 }
 
-const People = props => {
+export const People = props => {
   const gotoPage = (e, url) => {
     e.preventDefault()
     const {page} = getQueryStringParameters(url)
@@ -70,7 +70,7 @@ const People = props => {
   )
 }
 
-function mapStateToProps({starWarPeople}, {history}) {
+export function mapStateToProps({starWarPeople}, {history}) {
   const {people, next, previous} = starWarPeople
   return {
     people,

@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import {getIdFromUrl} from '../utils/helper'
 
-const Person = props => {
+export const Person = props => {
   const {person, id, films, history} = props
 
   if (!person) {
@@ -50,7 +50,7 @@ const Person = props => {
   )
 }
 
-const mapStateToProps = ({starWarPeople}, {match, history}) => {
+export const mapStateToProps = ({starWarPeople}, {match, history}) => {
   const {id} = match.params
   const {peopleEntities, filmsEntities} = starWarPeople
   const person = peopleEntities[id]
