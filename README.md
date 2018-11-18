@@ -1,3 +1,41 @@
+# Star War Catalog app
+
+This simple app demonstrates a typical spa implementation using React with Redux as its state management including:
+
+- Class based components and functional components
+- Routing with react-router
+- Services via asynchronous data fetching using async/await
+- Unit tests with react-redux, compononents unit testing with react-testing-library
+- End to end testing with Testcafe
+
+## Running the project locally
+
+1. Install npm packages
+
+`npm install`
+
+or if you use yarn
+
+`yarn install` or just `yarn`
+
+2. Run `npm start` or `yarn start`
+
+3. Navigate your browser to `http://localhost:3000/`
+
+## Running unit tests
+
+Run `npm test` or `npm t`
+
+or
+
+Run `yarn test`
+
+## Running end to end testing
+
+Run `npm run testcafe`
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
