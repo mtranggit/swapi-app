@@ -16,7 +16,7 @@ export const Header = ({branding}) => (
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/people" className="nav-link list" data-testid="list">
+            <Link to="/people" className="nav-link list" data-testid="people">
               People
             </Link>
           </li>

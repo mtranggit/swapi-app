@@ -49,7 +49,11 @@ export const People = props => {
             <td>
               {' '}
               {previous && (
-                <a href="/#" onClick={e => gotoPage(e, previous)}>
+                <a
+                  href="/#"
+                  onClick={e => gotoPage(e, previous)}
+                  data-testid="previous"
+                >
                   Previous
                 </a>
               )}
@@ -58,7 +62,11 @@ export const People = props => {
             <td>
               {' '}
               {next && (
-                <a href="/#" onClick={e => gotoPage(e, next)}>
+                <a
+                  href="/#"
+                  onClick={e => gotoPage(e, next)}
+                  data-testid="next"
+                >
                   Next
                 </a>
               )}

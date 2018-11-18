@@ -18,6 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "testcafe:test": "APP_TEST_ENV=test testcafe chrome testcafe/*.e2e.js -s testcafe",
+    "testcafe": "testcafe chrome testcafe/*.e2e.js -s testcafe",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
