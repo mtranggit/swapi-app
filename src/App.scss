@@ -1,0 +1,19 @@
+.nav-link {
+  position: relative;
+  margin-right: 1.5rem;
+  &.home:before {
+    position: absolute;
+    left: -1rem;
+    content: '🏡';
+  }
+  &.list:before {
+    position: absolute;
+    left: -1rem;
+    content: '🔍';
+  }
+  &.about:before {
+    position: absolute;
+    left: -1rem;
+    content: '💡';
+  }
+}

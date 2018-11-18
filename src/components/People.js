@@ -18,24 +18,25 @@ const PersonList = props => {
     </tr>
   )
 }
+
 const People = props => {
-  const {people, next, previous, history, dispatch} = props
   const gotoPage = (e, url) => {
     e.preventDefault()
-    // console.log('go to page url', url)
     const {page} = getQueryStringParameters(url)
     dispatch(getPeople(+page))
   }
 
+  const {people, next, previous, history, dispatch} = props
+
   return (
     <div>
       <h4>Star War People</h4>
-      <table>
+      <table className="table table-hover">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Height</th>
-            <th>Mass</th>
+            <th scope="col">Name</th>
+            <th scope="col">Height</th>
+            <th scope="col">Mass</th>
           </tr>
         </thead>
         <tbody>
@@ -48,7 +49,7 @@ const People = props => {
             <td>
               {' '}
               {previous && (
-                <a href="" onClick={e => gotoPage(e, previous)}>
+                <a href="/#" onClick={e => gotoPage(e, previous)}>
                   Previous
                 </a>
               )}
@@ -57,7 +58,7 @@ const People = props => {
             <td>
               {' '}
               {next && (
-                <a href="" onClick={e => gotoPage(e, next)}>
+                <a href="/#" onClick={e => gotoPage(e, next)}>
                   Next
                 </a>
               )}
